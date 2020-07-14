@@ -15,9 +15,9 @@ public class ChessMatch {
 	}
 	
 	public ChessPiece[][] obterPecas() {
-		ChessPiece[][] matriz = new ChessPiece[tabuleiro.getLinha()][tabuleiro.getColuna()];
-		for (int i=0; i<tabuleiro.getLinha(); i++) {
-			for (int j=0; j<tabuleiro.getColuna(); j++) {
+		ChessPiece[][] matriz = new ChessPiece[tabuleiro.getLinhas()][tabuleiro.getColunas()];
+		for (int i=0; i<tabuleiro.getLinhas(); i++) {
+			for (int j=0; j<tabuleiro.getColunas(); j++) {
 				matriz[i][j] = (ChessPiece) tabuleiro.peca(i, j);
 			}
 		}
