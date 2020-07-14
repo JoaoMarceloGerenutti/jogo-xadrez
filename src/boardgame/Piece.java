@@ -1,0 +1,20 @@
+package boardgame;
+
+public class Piece {
+
+	protected Position posicao;
+	private Board tabuleiro;
+	
+	public Piece() {
+	}
+
+	public Piece(Board tabuleiro) {
+		this.tabuleiro = tabuleiro;
+		posicao = null;
+	}
+
+	protected Board getTabuleiro() {
+		return tabuleiro;
+	}
+	
+}
