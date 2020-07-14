@@ -17,7 +17,7 @@ public class UI {
 	
 	private static void imprimirPeca(ChessPiece peca) {
 		if (peca == null) {
-			System.out.print("-");
+			System.out.print("▭");
 		} else {
 			System.out.print(peca);
 		}

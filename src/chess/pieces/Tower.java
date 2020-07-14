@@ -12,10 +12,6 @@ public class Tower extends ChessPiece {
 	
 	@Override
 	public String toString() {
-		if (getCor() == Color.BRANCO) {
-			return "♖";
-		} else {
-			return "♜";
-		}
+		return "♖";
 	}
 }
