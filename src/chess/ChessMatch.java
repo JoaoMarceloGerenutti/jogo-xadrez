@@ -28,8 +28,18 @@ public class ChessMatch {
 	}
 	
 	private void setupInicial() {
-		colocarNovaPeca('B', 6, new Tower(tabuleiro, Color.BRANCO));
-		colocarNovaPeca('E', 8, new King(tabuleiro, Color.PRETO));
-		colocarNovaPeca('E', 1, new King(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('C', 1, new Tower(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('C', 2, new Tower(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('D', 2, new Tower(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('E', 2, new Tower(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('E', 1, new Tower(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('D', 1, new King(tabuleiro, Color.BRANCO));
+
+		colocarNovaPeca('C', 7, new Tower(tabuleiro, Color.PRETO));
+		colocarNovaPeca('C', 8, new Tower(tabuleiro, Color.PRETO));
+		colocarNovaPeca('D', 7, new Tower(tabuleiro, Color.PRETO));
+		colocarNovaPeca('E', 7, new Tower(tabuleiro, Color.PRETO));
+		colocarNovaPeca('E', 8, new Tower(tabuleiro, Color.PRETO));
+		colocarNovaPeca('D', 8, new King(tabuleiro, Color.PRETO));
 	}
 }

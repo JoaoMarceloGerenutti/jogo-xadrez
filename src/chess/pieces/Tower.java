@@ -9,9 +9,13 @@ public class Tower extends ChessPiece {
 	public Tower(Board tabuleiro, Color cor) {
 		super(tabuleiro, cor);
 	}
-
+	
 	@Override
 	public String toString() {
-		return "♖";
+		if (getCor() == Color.BRANCO) {
+			return "♖";
+		} else {
+			return "♜";
+		}
 	}
 }
