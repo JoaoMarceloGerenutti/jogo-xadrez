@@ -46,7 +46,10 @@ public class ChessMatch {
 	
 	private void validarPosicaoOrigem(Position posicao) {
 		if (!tabuleiro.temUmaPeca(posicao)) {
-			throw new ChessException("Não existe peça na posição de origem!");
+			throw new ChessException("Nao existe peca na posicao de origem!");
+		}
+		if (!tabuleiro.peca(posicao).temAlgumMovimentoPossivel()) {
+			throw new ChessException("Nao existe nenhum movimento possivel para peca escolhida!");
 		}
 	}
 	
