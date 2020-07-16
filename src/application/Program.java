@@ -18,15 +18,15 @@ public class Program {
 		while (true) {
 			try {
 				UI.limparTela();
-				UI.imprimirTabuleiro(partidaXadrez.obterPecas());
-				System.out.println("-----------------");
+				UI.imprimirPartida(partidaXadrez);
+				System.out.println("--------------------------");
 				System.out.print("Origem: ");
 				ChessPosition origem = UI.lerPosicaoTabuleiro(sc);
 				
 				boolean[][] movimentosPossiveis = partidaXadrez.movimentosPossiveis(origem);
 				UI.limparTela();
 				UI.imprimirTabuleiro(partidaXadrez.obterPecas(), movimentosPossiveis);
-				System.out.println("-----------------");
+				System.out.println("--------------------------");
 				System.out.println();
 				System.out.print("Destino: ");
 				ChessPosition destino = UI.lerPosicaoTabuleiro(sc);
