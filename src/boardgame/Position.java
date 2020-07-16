@@ -21,8 +21,17 @@ public class Position {
 		return coluna;
 	}
 	
+	public void setLinha(Integer linha) {
+		this.linha = linha;
+	}
+
+	public void setColuna(Integer coluna) {
+		this.coluna = coluna;
+	}
+
 	public void setarValores(int linha, int coluna) {
-		
+		this.linha = linha;
+		this.coluna = coluna;
 	}
 	
 	@Override

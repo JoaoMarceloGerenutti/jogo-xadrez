@@ -33,6 +33,7 @@ public class ChessMatch {
 		Position origem = posicaoOrigem.paraPosicao();
 		Position destino = posicaoDestino.paraPosicao();
 		validarPosicaoOrigem(origem);
+		validarPosicaoDestino(origem, destino);
 		Piece pecaCapturada = facaMovimento(origem, destino);
 		return (ChessPiece)pecaCapturada;
 	}
@@ -50,6 +51,12 @@ public class ChessMatch {
 		}
 		if (!tabuleiro.peca(posicao).temAlgumMovimentoPossivel()) {
 			throw new ChessException("Nao existe nenhum movimento possivel para peca escolhida!");
+		}
+	}
+	
+	private void validarPosicaoDestino(Position origem, Position destino) {
+		if (!tabuleiro.peca(origem).movimentoPossivel(destino)) {
+			throw new ChessException("A peca escolhida nao pode se mover para posicao de destino!");
 		}
 	}
 	
