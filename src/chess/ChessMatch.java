@@ -94,13 +94,13 @@ public class ChessMatch {
 		colocarNovaPeca('A', 1, new Tower(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('B', 1, new Knight(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('C', 1, new Bishop(tabuleiro, Color.BRANCO));
-		colocarNovaPeca('D', 1, new King(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('D', 4, new King(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('E', 1, new Queen(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('F', 1, new Bishop(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('G', 1, new Knight(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('H', 1, new Tower(tabuleiro, Color.BRANCO));
 		//PEÇAS BRANCAS FRENTE
-		//colocarNovaPeca('A', 2, new Pawn(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('A', 2, new Pawn(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('B', 2, new Pawn(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('C', 2, new Pawn(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('D', 2, new Pawn(tabuleiro, Color.BRANCO));
