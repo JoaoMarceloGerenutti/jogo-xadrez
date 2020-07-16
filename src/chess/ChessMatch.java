@@ -29,6 +29,12 @@ public class ChessMatch {
 		return matriz;
 	}
 	
+	public boolean[][] movimentosPossiveis(ChessPosition posicaoOrigem) {
+		Position posicao = posicaoOrigem.paraPosicao();
+		validarPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).movimentosPossiveis();
+	}
+	
 	public ChessPiece fazerMovimentoXadrez(ChessPosition posicaoOrigem, ChessPosition posicaoDestino) {
 		Position origem = posicaoOrigem.paraPosicao();
 		Position destino = posicaoDestino.paraPosicao();
@@ -94,7 +100,7 @@ public class ChessMatch {
 		colocarNovaPeca('G', 1, new Knight(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('H', 1, new Tower(tabuleiro, Color.BRANCO));
 		//PEÇAS BRANCAS FRENTE
-		colocarNovaPeca('A', 2, new Pawn(tabuleiro, Color.BRANCO));
+		//colocarNovaPeca('A', 2, new Pawn(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('B', 2, new Pawn(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('C', 2, new Pawn(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('D', 2, new Pawn(tabuleiro, Color.BRANCO));
