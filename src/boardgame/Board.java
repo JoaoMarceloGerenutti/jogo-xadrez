@@ -8,7 +8,7 @@ public class Board {
 	
 	public Board(Integer linhas, Integer colunas) {
 		if (linhas < 1 || colunas < 1) {
-			throw new BoardException("Erro ao criar o tabuleiro: é necessario que exista pelo menos uma linha e uma coluna!");
+			throw new BoardException("Erro ao criar o tabuleiro: e necessario que exista pelo menos uma linha e uma coluna!");
 		}
 		this.linhas = linhas;
 		this.colunas = colunas;
@@ -25,21 +25,21 @@ public class Board {
 	
 	public Piece peca(int linha, int coluna) {
 		if (!posicaoExiste(linha, coluna)) {
-			throw new BoardException("Posição não está no tabuleiro!");
+			throw new BoardException("Posicao nao esta no tabuleiro!");
 		}
 		return pecas[linha][coluna];
 	}
 	
 	public Piece peca(Position posicao) {
 		if (!posicaoExiste(posicao)) { 
-			throw new BoardException("Posição não está no tabuleiro!");
+			throw new BoardException("Posicao nao esta no tabuleiro!");
 		}
 		return pecas[posicao.getLinha()][posicao.getColuna()];
 	}
 	
 	public void colocarPeca(Piece peca, Position posicao) {
 		if (temUmaPeca(posicao)) {
-			throw new BoardException("Já tem uma peça na posição " + posicao);
+			throw new BoardException("Ja tem uma peça na posicao " + posicao);
 		}
 		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
 		peca.posicao = posicao;
@@ -47,7 +47,7 @@ public class Board {
 	
 	public Piece removerPeca(Position posicao) {
 		if (!posicaoExiste(posicao)) {
-			throw new BoardException("Posição não está no tabuleiro!");
+			throw new BoardException("Posicao nao esta no tabuleiro!");
 		}
 		if (peca(posicao) == null) {
 			return null;
@@ -68,7 +68,7 @@ public class Board {
 	
 	public boolean temUmaPeca(Position posicao) {
 		if (!posicaoExiste(posicao)) {
-			throw new BoardException("Posição não está no tabuleiro!");
+			throw new BoardException("Posicao nao esta no tabuleiro!");
 		}
 		return peca(posicao) != null;
 	}
