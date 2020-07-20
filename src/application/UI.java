@@ -55,6 +55,9 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: " + partidaXadrez.getTurno());
 		System.out.println("Esperando o jogador " + partidaXadrez.getJogadorAtual());
+		if (partidaXadrez.getCheque()) {
+			System.out.println("CHEQUE!");
+		}
 	}
 	
 	public static void imprimirTabuleiro(ChessPiece[][] pecas) {
