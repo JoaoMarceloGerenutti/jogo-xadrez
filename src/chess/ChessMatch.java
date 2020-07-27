@@ -91,7 +91,7 @@ public class ChessMatch {
 	
 	private void desfazerMovimento(Position origem, Position destino, Piece pecaCapturada) {
 		Piece p = tabuleiro.removerPeca(destino);
-		tabuleiro.colocarPeca(p, destino);
+		tabuleiro.colocarPeca(p, origem);
 		
 		if (pecaCapturada != null) {
 			tabuleiro.colocarPeca(pecaCapturada, destino);
@@ -155,14 +155,22 @@ public class ChessMatch {
 	}
 	
 	private void setupInicial() {
+		
+		colocarNovaPeca('H', 7, new Tower(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('D', 1, new Tower(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('E', 1, new King(tabuleiro, Color.BRANCO));
+		
+		colocarNovaPeca('B', 8, new Tower(tabuleiro, Color.PRETO));
+		colocarNovaPeca('A', 8, new King(tabuleiro, Color.PRETO));
+		/*
 		//PEÇAS PRETAS ATRAS
 		colocarNovaPeca('A', 8, new Tower(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('B', 8, new Knight(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('C', 8, new Bishop(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('E', 8, new Queen(tabuleiro, Color.PRETO));
+		colocarNovaPeca('B', 8, new Knight(tabuleiro, Color.PRETO));
+		colocarNovaPeca('C', 8, new Bishop(tabuleiro, Color.PRETO));
+		colocarNovaPeca('E', 8, new Queen(tabuleiro, Color.PRETO));
 		colocarNovaPeca('D', 8, new King(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('F', 8, new Bishop(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('G', 8, new Knight(tabuleiro, Color.PRETO));
+		colocarNovaPeca('F', 8, new Bishop(tabuleiro, Color.PRETO));
+		colocarNovaPeca('G', 8, new Knight(tabuleiro, Color.PRETO));
 		colocarNovaPeca('H', 8, new Tower(tabuleiro, Color.PRETO));
 		//PEÇAS PRETAS FRENTE
 		colocarNovaPeca('A', 7, new Tower(tabuleiro, Color.PRETO));
@@ -174,14 +182,14 @@ public class ChessMatch {
 		colocarNovaPeca('G', 7, new Tower(tabuleiro, Color.PRETO));
 		colocarNovaPeca('H', 7, new Tower(tabuleiro, Color.PRETO));
 		
-		//PEÇAS BRANCAS
+		//PEÇAS BRANCAS ATRAS
 		colocarNovaPeca('A', 1, new Tower(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('B', 1, new Knight(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('C', 1, new Bishop(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('B', 1, new Knight(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('C', 1, new Bishop(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('D', 1, new King(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('E', 1, new Queen(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('F', 1, new Bishop(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('G', 1, new Knight(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('E', 1, new Queen(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('F', 1, new Bishop(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('G', 1, new Knight(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('H', 1, new Tower(tabuleiro, Color.BRANCO));
 		//PEÇAS BRANCAS FRENTE
 		colocarNovaPeca('A', 2, new Tower(tabuleiro, Color.BRANCO));
@@ -192,5 +200,6 @@ public class ChessMatch {
 		colocarNovaPeca('F', 2, new Tower(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('G', 2, new Tower(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('H', 2, new Tower(tabuleiro, Color.BRANCO));
+		*/
 	}
 }

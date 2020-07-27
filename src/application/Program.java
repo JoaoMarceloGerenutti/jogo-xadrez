@@ -16,12 +16,12 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 		ChessMatch partidaXadrez = new ChessMatch();
-		List<ChessPiece> capturados = new ArrayList<>();
+		List<ChessPiece> capturado = new ArrayList<>();
 		
 		while (true) {
 			try {
 				UI.limparTela();
-				UI.imprimirPartida(partidaXadrez, capturados);
+				UI.imprimirPartida(partidaXadrez, capturado);
 				System.out.println("--------------------------");
 				System.out.print("Origem: ");
 				ChessPosition origem = UI.lerPosicaoTabuleiro(sc);
@@ -36,8 +36,8 @@ public class Program {
 				
 				ChessPiece pecaCapturada = partidaXadrez.fazerMovimentoXadrez(origem, destino);
 				
-				if (capturados != null) {
-					capturados.add(pecaCapturada);
+				if (pecaCapturada != null) {
+					capturado.add(pecaCapturada);
 				}
 				
 			} catch (ChessException e) {
