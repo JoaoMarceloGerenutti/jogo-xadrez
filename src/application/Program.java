@@ -18,7 +18,7 @@ public class Program {
 		ChessMatch partidaXadrez = new ChessMatch();
 		List<ChessPiece> capturado = new ArrayList<>();
 		
-		while (true) {
+		while (!partidaXadrez.getChequeMate()) {
 			try {
 				UI.limparTela();
 				UI.imprimirPartida(partidaXadrez, capturado);
@@ -48,6 +48,8 @@ public class Program {
 				sc.nextLine();
 			}
 		}
+		UI.limparTela();
+		UI.imprimirPartida(partidaXadrez, capturado);
 	}
 
 }
