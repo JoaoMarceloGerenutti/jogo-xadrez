@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
-//import chess.pieces.Bishop;
+import chess.pieces.Bishop;
 import chess.pieces.King;
 //import chess.pieces.Knight;
 import chess.pieces.Pawn;
@@ -195,10 +195,10 @@ public class ChessMatch {
 		//PEÇAS PRETAS ATRAS
 		colocarNovaPeca('A', 8, new Tower(tabuleiro, Color.PRETO));
 		//colocarNovaPeca('B', 8, new Knight(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('C', 8, new Bishop(tabuleiro, Color.PRETO));
+		colocarNovaPeca('C', 8, new Bishop(tabuleiro, Color.PRETO));
 		//colocarNovaPeca('E', 8, new Queen(tabuleiro, Color.PRETO));
 		colocarNovaPeca('D', 8, new King(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('F', 8, new Bishop(tabuleiro, Color.PRETO));
+		colocarNovaPeca('F', 8, new Bishop(tabuleiro, Color.PRETO));
 		//colocarNovaPeca('G', 8, new Knight(tabuleiro, Color.PRETO));
 		colocarNovaPeca('H', 8, new Tower(tabuleiro, Color.PRETO));
 		//PEÇAS PRETAS FRENTE
@@ -214,10 +214,10 @@ public class ChessMatch {
 		//PEÇAS BRANCAS ATRAS
 		colocarNovaPeca('A', 1, new Tower(tabuleiro, Color.BRANCO));
 		//colocarNovaPeca('B', 1, new Knight(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('C', 1, new Bishop(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('C', 1, new Bishop(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('D', 1, new King(tabuleiro, Color.BRANCO));
 		//colocarNovaPeca('E', 1, new Queen(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('F', 1, new Bishop(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('F', 1, new Bishop(tabuleiro, Color.BRANCO));
 		//colocarNovaPeca('G', 1, new Knight(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('H', 1, new Tower(tabuleiro, Color.BRANCO));
 		//PEÇAS BRANCAS FRENTE

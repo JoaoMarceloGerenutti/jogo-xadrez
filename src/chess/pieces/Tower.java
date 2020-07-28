@@ -61,7 +61,6 @@ public class Tower extends ChessPiece {
 		if (getTabuleiro().posicaoExiste(p) && temUmaPecaInimiga(p)) {
 			matriz[p.getLinha()][p.getColuna()] = true;
 		}
-		
 		return matriz;
 	}
 }
