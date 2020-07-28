@@ -11,11 +11,6 @@ public class King extends ChessPiece {
 		super(tabuleiro, cor);
 	}
 
-	@Override
-	public String toString() {
-		return "K";
-	}
-
 	private boolean podeMover(Position posicao) {
 		ChessPiece p = (ChessPiece)getTabuleiro().peca(posicao);
 		return p == null || p.getCor() != getCor();
@@ -74,8 +69,12 @@ public class King extends ChessPiece {
 		if (getTabuleiro().posicaoExiste(p) && podeMover(p)) {
 			matriz[p.getLinha()][p.getColuna()] = true;
 		}
-		
 		return matriz;
+	}
+
+	@Override
+	public String toString() {
+		return "K";
 	}
 	
 }
