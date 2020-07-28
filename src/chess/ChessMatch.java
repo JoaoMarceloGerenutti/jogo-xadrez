@@ -11,7 +11,7 @@ import chess.pieces.Bishop;
 import chess.pieces.King;
 import chess.pieces.Knight;
 import chess.pieces.Pawn;
-//import chess.pieces.Queen;
+import chess.pieces.Queen;
 import chess.pieces.Tower;
 
 public class ChessMatch {
@@ -196,7 +196,7 @@ public class ChessMatch {
 		colocarNovaPeca('A', 8, new Tower(tabuleiro, Color.PRETO));
 		colocarNovaPeca('B', 8, new Knight(tabuleiro, Color.PRETO));
 		colocarNovaPeca('C', 8, new Bishop(tabuleiro, Color.PRETO));
-		//colocarNovaPeca('E', 8, new Queen(tabuleiro, Color.PRETO));
+		colocarNovaPeca('E', 8, new Queen(tabuleiro, Color.PRETO));
 		colocarNovaPeca('D', 8, new King(tabuleiro, Color.PRETO));
 		colocarNovaPeca('F', 8, new Bishop(tabuleiro, Color.PRETO));
 		colocarNovaPeca('G', 8, new Knight(tabuleiro, Color.PRETO));
@@ -216,7 +216,7 @@ public class ChessMatch {
 		colocarNovaPeca('B', 1, new Knight(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('C', 1, new Bishop(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('D', 1, new King(tabuleiro, Color.BRANCO));
-		//colocarNovaPeca('E', 1, new Queen(tabuleiro, Color.BRANCO));
+		colocarNovaPeca('E', 1, new Queen(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('F', 1, new Bishop(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('G', 1, new Knight(tabuleiro, Color.BRANCO));
 		colocarNovaPeca('H', 1, new Tower(tabuleiro, Color.BRANCO));
