@@ -40,6 +40,12 @@ public class Program {
 					capturado.add(pecaCapturada);
 				}
 				
+				if (partidaXadrez.getPromovido() != null) {
+					System.out.print("Digite a letra para promocao (B/N/T/Q): ");
+					System.out.println("--------------------------");
+					String tipo = sc.nextLine();
+					partidaXadrez.recolocarPecaPromovida(tipo);
+				}
 			} catch (ChessException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();

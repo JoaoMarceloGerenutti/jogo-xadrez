@@ -1,5 +1,6 @@
 package chess;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +23,7 @@ public class ChessMatch {
 	private boolean cheque;
 	private boolean chequeMate;
 	private ChessPiece enPassantVulneravel;
+	private ChessPiece promovido;
 
 	private List<Piece> pecasNoTabuleiro = new ArrayList<>();
 	private List<Piece> pecasCapturadas = new ArrayList<>();
@@ -51,6 +53,10 @@ public class ChessMatch {
 
 	public ChessPiece getEnPassantVulneravel() {
 		return enPassantVulneravel;
+	}
+	
+	public ChessPiece getPromovido() {
+		return promovido;
 	}
 
 	public ChessPiece[][] obterPecas() {
@@ -83,6 +89,15 @@ public class ChessMatch {
 
 		ChessPiece pecaMovida = (ChessPiece) tabuleiro.peca(destino);
 
+		// #MOVIMENTO ESPECIAL PROMOÇÃO
+		promovido = null;
+		if (pecaMovida instanceof Pawn) {
+			if (pecaMovida.getCor() == Color.BRANCO && destino.getLinha() == 0 || pecaMovida.getCor() == Color.PRETO && destino.getLinha() == 7) {
+				promovido = (ChessPiece)tabuleiro.peca(destino);
+				promovido = recolocarPecaPromovida("Q");
+			}
+		}
+		
 		cheque = (testeCheque(oponente(jogadorAtual))) ? true : false;
 
 		if (testeChequeMate(oponente(jogadorAtual))) {
@@ -100,6 +115,32 @@ public class ChessMatch {
 		}
 
 		return (ChessPiece) pecaCapturada;
+	}
+	
+	public ChessPiece recolocarPecaPromovida(String tipo) {
+		if (promovido == null) {
+			throw new IllegalStateException("Nao ha peca para ser promovida!");
+		}
+		if (!tipo.equals("B") && !tipo.equals("N") && !tipo.equals("T") && !tipo.equals("Q")) {
+			throw new InvalidParameterException("Tipo invalido para promocao!"); 
+		}
+		
+		Position pos = promovido.getPosicaoXadrez().paraPosicao();
+		Piece p = tabuleiro.removerPeca(pos);
+		pecasNoTabuleiro.remove(p);
+		
+		ChessPiece novaPeca = novaPeca(tipo, promovido.getCor());
+		tabuleiro.colocarPeca(novaPeca, pos);
+		pecasNoTabuleiro.add(novaPeca);
+		
+		return novaPeca;
+	}
+	
+	private ChessPiece novaPeca(String tipo, Color cor) {
+		if (tipo.equals("B")) return new Bishop(tabuleiro, cor);
+		if (tipo.equals("N")) return new Knight(tabuleiro, cor);
+		if (tipo.equals("Q")) return new Queen(tabuleiro, cor);
+		return new Tower(tabuleiro, cor);
 	}
 
 	private Piece facaMovimento(Position origem, Position destino) {
