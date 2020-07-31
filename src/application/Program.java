@@ -42,8 +42,11 @@ public class Program {
 				
 				if (partidaXadrez.getPromovido() != null) {
 					System.out.print("Digite a letra para promocao (B/N/T/Q): ");
-					System.out.println("--------------------------");
-					String tipo = sc.nextLine();
+					String tipo = sc.nextLine().toUpperCase();
+					while (!tipo.equals("B") && !tipo.equals("N") && !tipo.equals("T") && !tipo.equals("Q")) {
+						System.out.print("Valor invalido! Entre com a letra para promocao (B/N/T/Q): ");
+						tipo = sc.nextLine().toUpperCase();
+					}
 					partidaXadrez.recolocarPecaPromovida(tipo);
 				}
 			} catch (ChessException e) {
